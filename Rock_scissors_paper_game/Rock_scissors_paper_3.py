@@ -5,7 +5,6 @@ def random_string_picker(strings):
 
 predefined_strings = ["가위", "바위", "보"]
 result = random_string_picker(predefined_strings)
-# print(result)
 
 def user_choice():
     print('메뉴를 선택해주세요')
