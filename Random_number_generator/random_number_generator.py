@@ -10,6 +10,7 @@ def type_validate(input_str):
 
 # 입력 & 오류 처리 
 def start_number_input():
+    print('시작 숫자를 입력해주세요')
     start_number = input('>')
     if type_validate(start_number):
         pass
@@ -21,6 +22,7 @@ def start_number_input():
 start_number = int(start_number_input())
 
 def end_number_input():
+    print('종료 숫자를 입력해주세요')
     end_number = input('>')
     if type_validate(end_number):
         pass
@@ -31,6 +33,7 @@ def end_number_input():
 end_number = int(end_number_input())
 
 def generate_number_input():
+    print('생성할 숫자의 개수를 입력해주세요')
     generate_number = input('>')
     if type_validate(generate_number):
         pass
@@ -43,6 +46,7 @@ generate_number = int(generate_number_input())
 # 랜덤 숫자 생성 
 def random_generator():
     global start_number, end_number, generate_number
+
     generate_number_list = []
 
     # 랜덤숫자 생성
@@ -50,7 +54,6 @@ def random_generator():
         generated_number = random.randint(start_number, end_number)
         generate_number_list.append(generated_number)
 
-    return generate_number_list
+    print(generate_number_list)
 
-generated_number_list = random_generator()
-print(generated_number_list)
+random_generator()
