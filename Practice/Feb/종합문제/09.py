@@ -25,11 +25,13 @@ def pairwise_tuples(lst):
                 odd_list.append(str_lst[i])
             else:
                 even_list.append(str_lst[i])
-
-            odd_list.append(None)
+            
+        even_list.append(None)
         
         pair = list(zip(odd_list, even_list))
-        return pair
+        result_data = [(int(a), int(b)) if b is not None else (int(a), None) for a, b in pair]
+
+        return result_data
 
         
 
@@ -37,4 +39,4 @@ def pairwise_tuples(lst):
 # 예시 입력: [1, 2, 3, 4, 5]
 # 예시 출력: [(1, 2), (3, 4), (5, None)]
 
-print(pairwise_tuples([1, 2, 3, 4, 5, 6]))
+print(pairwise_tuples([1, 2, 3, 4, 5]))
