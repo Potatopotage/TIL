@@ -4,3 +4,8 @@ sentence = "The quick brown fox jumps over the lazy dog"
 
 # 출력 예시
 # ['quick', 'brown', 'jumps', 'over', 'lazy']
+
+sentence_split = sentence.split(' ')
+print(sentence_split)
+
+print(list([x for x in sentence_split if len(x) >= 4]))

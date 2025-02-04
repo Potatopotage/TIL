@@ -4,3 +4,5 @@ words = ["apple", "banana", "cat", "dog", "elephant"]
 
 # 출력 예시
 # [5, 6, 8]
+
+print(list(map(len,[x for x in words if len(x) >= 5])))

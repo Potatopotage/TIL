@@ -5,3 +5,8 @@ words = ["python", "lambda", "map", "zip"]
 
 # 출력 예시
 # [('PYTHON', 6), ('LAMBDA', 6), ('MAP', 3), ('ZIP', 3)]
+
+word_list = list(map(lambda x: x.upper(), words))
+print(word_list)
+
+print(list(map(lambda x: (x, len(x)), word_list)))

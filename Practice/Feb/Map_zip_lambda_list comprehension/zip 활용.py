@@ -5,3 +5,7 @@ list2 = [2, 4, 6, 8]
 
 # 출력 예시 
 # [5, 10, 15, 20]
+
+pair = zip(list1, list2)
+
+print(list(map(sum, pair)))

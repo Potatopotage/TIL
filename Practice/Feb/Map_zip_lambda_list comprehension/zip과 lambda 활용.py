@@ -6,3 +6,10 @@ list2 = [10, 20, 30, 40, 50]
 
 # 출력 예시
 # [10, 40, 90, 160, 250]
+
+pair = list(zip(list1, list2))
+
+
+print([x * y for x, y in pair])
+
+print(list(map(lambda x: x[0] * x[1], pair)))

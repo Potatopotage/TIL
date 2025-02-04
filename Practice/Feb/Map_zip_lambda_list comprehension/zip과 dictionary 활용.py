@@ -5,3 +5,6 @@ values = ["Alice", 25, "New York"]
 
 # 출력 예시
 # {'name': 'Alice', 'age': 25, 'city': 'New York'}
+
+pair = dict(zip(keys, values))
+print(pair)
