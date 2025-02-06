@@ -18,7 +18,6 @@ def start_number_input():
         print('숫자만 입력해주십시오')
         return start_number_input()
 
-start_number = int(start_number_input())
 
 def end_number_input():
     print('종료 숫자를 입력해주세요')
@@ -27,10 +26,10 @@ def end_number_input():
         return end_number
     else:
         print('숫자만 입력해주십시오')
-        start_number_input()
+        end_number_input()
         return end_number_input()
     
-end_number = int(end_number_input())
+
 
 def generate_number_input():
     print('생성할 숫자의 개수를 입력해주세요')
@@ -39,10 +38,9 @@ def generate_number_input():
         return generate_number
     else:
         print('숫자만 입력해주십시오')
-        start_number_input()
+        generate_number_input()
         return generate_number_input()
 
-generate_number = int(generate_number_input())
 
 def allow_repetition():
     print('중복 생성을 허용하시겠습니까? y/n')
@@ -55,21 +53,43 @@ def allow_repetition():
         print('y와 n 중 입력해주십시오')
         return allow_repetition()
 
-y_n_input = allow_repetition()
-
 
 def random_generator():
-    global start_number, end_number, generate_number, y_n_input
+
+    start_number = int(start_number_input())
+    end_number = int(end_number_input())
+
+    if start_number > end_number:
+        print('종료 숫자는 시작 숫자보다 커야 합니다')
+        return random_generator()
+    
+    generate_number = int(generate_number_input())
+
+    if generate_number > end_number - start_number + 1:
+        print('숫자의 범위보다 생성할 숫자의 개수가 더 많습니다')
+        return random_generator()
+
+    y_n_input = allow_repetition()
 
     generate_number_list = []
 
     # 중복 허용 
     if y_n_input == 'y':
-        pass
+        # generate_number만큼 랜덤 숫자 생성
+        for _ in range(generate_number):
+            random_number = random.randint(start_number, end_number)
+            generate_number_list.append(random_number)
+        
+        generate_number_list.sort()
+        return generate_number_list
+
     # 중복 비허용 
     elif y_n_input == 'n':
-        pass
-    return generate_number_list.sort()
+        
+        result = random.sample(range(start_number, end_number + 1), generate_number)
+        result.sort()
+        return result
+        
 
 result = random_generator()
 print(result)
