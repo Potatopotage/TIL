@@ -14,6 +14,68 @@
 0은 배추가 심어져 있지 않은 땅이고, 1은 배추가 심어져 있는 땅을 나타낸다.
 """
 
+import sys
+# sys.stdin = open('input.txt', 'r')
+
+input = sys.stdin.readline
+
+from collections import deque
+
+
+def bfs(r, c, N, M):
+    global field
+    queue = deque([(r, c)])
+    field[r][c] = 0
+
+    dr = [0, 0, 1, -1]
+    dc = [1, -1, 0, 0]
+
+    while queue:
+        current_r, current_c = queue.popleft()
+
+        for i in range(4):
+            nr = current_r + dr[i]
+            nc = current_c + dc[i]
+
+            if 0 <= nr < N and 0 <= nc < M:
+                if field[nr][nc] == 1:
+                    field[nr][nc] = 0
+                    queue.append((nr, nc))
+
+    return 1
+
+
+T = int(input())
+
+for test_case in range(1, T + 1):
+    # M: 배추밭의 가로 길이
+    # N: 배추밭의 세로 길이
+    # K: 배추가 심어져 있는 위치의 개수
+    M, N, K = map(int, input().split())
+
+    field = [[0] * M for _ in range(N)]
+    
+    for _ in range(K):
+        c, r = map(int, input().split())
+        field[r][c] = 1
+
+    count_warm = 0
+    for r in range(N):
+        for c in range(M):
+            if field[r][c] == 1:
+                bfs(r, c, N, M)
+                count_warm += 1
+
+    print(count_warm)
+
+
+
+
+
+
+
+
+
 
 
 
