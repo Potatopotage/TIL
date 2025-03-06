@@ -5,17 +5,18 @@ num, B = input().split()
 
 B = int(B)
 
+# 각 자리 숫자에 대한 정보
 num_system_dict = {
     '0': 0,
     '1': 1,
-    '2': 1,
-    '3': 1,
-    '4': 1,
-    '5': 1,
-    '6': 1,
-    '7': 1,
-    '8': 1,
-    '9': 1,
+    '2': 2,
+    '3': 3,
+    '4': 4,
+    '5': 5,
+    '6': 6,
+    '7': 7,
+    '8': 8,
+    '9': 9,
     'A': 10,
     'B': 11,
     'C': 12,
@@ -44,13 +45,18 @@ num_system_dict = {
     'Z': 35
 }
 
+# 입력값의 각 자리수를 따로 저장
 num_lst = []
+# 각 값에 해당하는 수 저장
 for i in num:
     num_lst.append(i)
 
+# 역순으로 계산하기 위해 뒤집기
 num_lst.reverse()
 
 dex_num = 0
+# 각 자리수에 대한 10진수 계산하여 더하기
+# 역순이기 때문에 0부터 시작하여 증가하는 값을 곱해준다
 for j in range(len(num_lst)):
    dex_num += num_system_dict[num_lst[j]] * (B ** j)
 
