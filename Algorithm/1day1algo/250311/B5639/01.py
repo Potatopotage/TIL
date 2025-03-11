@@ -7,6 +7,7 @@
 """
 import sys
 
+# 전위순외한 결과를 가지고 트리의 정보를 저장하는 함수
 def build_tree(preorder_lst):
     if not preorder_lst:
         return []
@@ -15,17 +16,21 @@ def build_tree(preorder_lst):
 
     left_tree = []
     right_tree = []
+    # 현재 노드 뒤의 리스트 요소 중 현재 노드의 값보다 작은 수들은 왼쪽 트리, 큰 수들은 오른쪽 트리에 속한다
     for node in preorder_lst[1:]:
         if node < root:
             left_tree.append(node)
         elif node > root:
             right_tree.append(node)
 
+    # 각 서브트리에 대해 반복 실행
     left = build_tree(left_tree)
     right = build_tree(right_tree)
 
+    # 순회 순서대로 저장
     return [root, left, right]
 
+# 트리를 후위순회하는 함수
 def postorder(tree):
     if not tree:
         return
