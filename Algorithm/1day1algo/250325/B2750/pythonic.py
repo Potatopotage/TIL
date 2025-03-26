@@ -1,33 +1,17 @@
 import sys
-input = sys.stdin.readline
+sys.stdin = open('input.txt', 'r')
 
-def quick_sort(arr, start, end):
-    if start >= end:
-        return
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
 
-    pivot = start
-    left = start + 1
-    right = end
+    pivot = arr[0]
+    tail = arr[1:]
 
-    while left <= right:
-        while left <= end and arr[left] <= arr[pivot]:
-            left += 1
+    left = [x for x in tail if x <= pivot]
+    right = [x for x in tail if x > pivot]
 
-        while right > start and arr[right] > arr[pivot]:  # 여기 비교 수정
-            right -= 1
-
-        if left > right:
-            arr[pivot], arr[right] = arr[right], arr[pivot]
-        else:
-            arr[left], arr[right] = arr[right], arr[left]
-
-    quick_sort(arr, start, right - 1)
-    quick_sort(arr, right + 1, end)
+    return
 
 N = int(input())
-arr = [int(input()) for _ in range(N)]
-
-quick_sort(arr, 0, len(arr) - 1)
-
-for num in arr:
-    print(num)
+array = [int(input()) for _ in range(N)]
