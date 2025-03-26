@@ -1,5 +1,4 @@
-import sys
-sys.stdin = open('input.txt', 'r')
+arr = [5, 7, 9, 0, 3, 1, 6, 2, 4, 8]
 
 def quicksort(arr):
     if len(arr) <= 1:
@@ -8,12 +7,10 @@ def quicksort(arr):
     pivot = arr[0]
     tail = arr[1:]
 
-    left = [x for x in tail if x <= pivot]
+    left = [x for x in tail if x < pivot]
     right = [x for x in tail if x > pivot]
 
     return quicksort(left) + [pivot] + quicksort(right)
 
-N = int(input())
-array = [int(input()) for _ in range(N)]
 
-print(quicksort(array))
+print(quicksort(arr))
