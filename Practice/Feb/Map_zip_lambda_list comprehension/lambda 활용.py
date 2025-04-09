@@ -3,6 +3,6 @@
 numbers = [1, 2, 3, 4, 5, 6]
 
 # 출력 예시
-# [3, 4, 9, 16, 15, 36]
+# [3, 4, 09, 16, 15, 36]
 
 print(list(map(lambda x: x ** 2 if x % 2 == 0 else x * 3, numbers)))

@@ -4,5 +4,5 @@ def square_numbers(numbers):
     return list(map(lambda x: x ** 2, numbers))
 
 # 테스트
-print(square_numbers([1, 2, 3, 4]))  # [1, 4, 9, 16]
+print(square_numbers([1, 2, 3, 4]))  # [1, 4, 09, 16]
 print(square_numbers([-1, -2, 0, 5]))  # [1, 4, 0, 25]

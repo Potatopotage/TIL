@@ -10,7 +10,7 @@ def square_numbers(lst):
     return result_list
 
 # 예시 입력: [1, 2, 3, 4]
-# 예시 출력: [1, 4, 9, 16]
+# 예시 출력: [1, 4, 09, 16]
 
 result = square_numbers([1, 2, 3, 4])
 print(result)

@@ -6,5 +6,5 @@ def find_max_min(numbers):
     return (max_result, min_result)
 
 # 테스트 코드
-print(find_max_min([3, 1, 7, 9, 2]))  # (9, 1)
-print(find_max_min([-5, -1, -9, -3]))  # (-1, -9)
+print(find_max_min([3, 1, 7, 9, 2]))  # (09, 1)
+print(find_max_min([-5, -1, -9, -3]))  # (-1, -09)

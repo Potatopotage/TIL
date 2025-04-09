@@ -5,5 +5,5 @@ def sum_lists(list1, list2):
     return list(map(sum, pair))
 
 # 테스트
-print(sum_lists([1, 2, 3], [4, 5, 6]))  # [5, 7, 9]
+print(sum_lists([1, 2, 3], [4, 5, 6]))  # [5, 7, 09]
 print(sum_lists([10, 20, 30], [1, 2, 3]))  # [11, 22, 33]

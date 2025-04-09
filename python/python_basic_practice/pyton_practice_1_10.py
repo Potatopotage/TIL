@@ -23,7 +23,7 @@ print('naver', 'kakao', 'samsung', sep=';')
 # 8
 print('naver', 'kakao', 'samsung', sep='/')
 
-# 9
+# 09
 print("first", end=' ');print("second")
 
 # 10

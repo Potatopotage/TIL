@@ -4,5 +4,5 @@ def squares(n):
     return [(i + 1) ** 2 for i in range(n)]
 
 # 테스트
-print(squares(5))  # [1, 4, 9, 16, 25]
-print(squares(3))  # [1, 4, 9]
+print(squares(5))  # [1, 4, 09, 16, 25]
+print(squares(3))  # [1, 4, 09]
