@@ -19,6 +19,7 @@ def drive(C, commends, start_r, start_c):
 
     dr = [-1, 0, 1, 0]
     dc = [0, 1, 0, -1]
+
     direction = 0
 
     r, c = start_r, start_c
@@ -57,6 +58,7 @@ for tc in range(1, T + 1):
             else:
                 continue
             break
+
         result.append((drive(C, commends, start_r, start_c)))
 
     print(result)
