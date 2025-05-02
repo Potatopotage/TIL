@@ -23,10 +23,12 @@ for i, c in enumerate(range(ord('a'), ord('z') + 1), start=1):
 for i, c in enumerate(range(ord('A'), ord('Z') + 1), start=27):
     char_dict[chr(c)] = i
 
+# 루트를 찾는 함수
 def find(x):
     if parent[x] != x:
         parent[x] = find(parent[x])
     return parent[x]
+
 
 def union(x, y):
     root_x = find(x)
